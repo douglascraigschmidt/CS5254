@@ -60,7 +60,7 @@ public class RunnableThreadsMgr
 
     /**
      * Manually create/start a list of threads that represent the
-     * beings in .this simulation.
+     * beings in this simulation.
      */
     void beginBeingThreads() {
         // All STUDENTS:

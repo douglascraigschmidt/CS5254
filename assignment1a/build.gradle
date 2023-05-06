@@ -1,0 +1,26 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        google()
+    }
+
+    dependencies {
+        if (file("$projectDir/admin/skeleton.gradle").isFile()) {
+            classpath "org.ajoberstar:grgit:1.9.3"
+        }
+    }
+}
+
+plugins {
+    id 'com.android.application' version '8.0.1' apply false
+    id 'com.android.library' version '8.0.1' apply false
+    id 'org.jetbrains.kotlin.android' version '1.8.10' apply false
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+if (file("$projectDir/admin/skeleton.gradle").isFile()) {
+    apply from: "$projectDir/admin/skeleton.gradle"
+}

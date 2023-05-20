@@ -1,0 +1,10 @@
+.idea/
+.gradle/
+build/
+image-cache/
+captures/
+local.properties
+*.iml
+*.log
+AUTOGRADER_SUBMISSION/
+zip/

@@ -1,0 +1,21 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+// Java/Kotlin toolchain support for Giraffe IDE version coming out in late 2023.
+//plugins {
+//    id 'org.gradle.toolchains.foojay-resolver-convention' version '0.5.0'
+//}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "palantiri-2023"
+include ":app"

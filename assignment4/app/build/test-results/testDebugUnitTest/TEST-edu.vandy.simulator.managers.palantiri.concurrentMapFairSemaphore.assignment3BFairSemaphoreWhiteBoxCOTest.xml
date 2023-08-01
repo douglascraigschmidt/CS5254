@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="edu.vandy.simulator.managers.palantiri.concurrentMapFairSemaphore.assignment3BFairSemaphoreWhiteBoxCOTest" tests="24" skipped="0" failures="0" errors="0" timestamp="2023-08-01T20:47:33" hostname="Douglass-MBP.attlocal.net" time="0.572">
+  <properties/>
+  <testcase name="testFairSemaphoreFields" classname="edu.vandy.simulator.managers.palantiri.concurrentMapFairSemaphore.assignment3BFairSemaphoreWhiteBoxCOTest" time="0.145"/>
+  <testcase name="testWaiterFields" classname="edu.vandy.simulator.managers.palantiri.concurrentMapFairSemaphore.assignment3BFairSemaphoreWhiteBoxCOTest" time="0.004"/>
+  <testcase name="testTryToGetPermitWhenLocked" classname="edu.vandy.simulator.managers.palantiri.concurrentMapFairSemaphore.assignment3BFairSemaphoreWhiteBoxCOTest" time="0.007"/>
+  <testcase name="testAcquireUninterruptibly" classname="edu.vandy.simulator.managers.palantiri.concurrentMapFairSemaphore.assignment3BFairSemaphoreWhiteBoxCOTest" time="0.004"/>
+  <testcase name="testWaitForPermitWithBlocking" classname="edu.vandy.simulator.managers.palantiri.concurrentMapFairSemaphore.assignment3BFairSemaphoreWhiteBoxCOTest" time="0.016"/>
+  <testcase name="testTryToGetPermitUnlockedEmptyQueueAndNoAvailablePermits" classname="edu.vandy.simulator.managers.palantiri.concurrentMapFairSemaphore.assignment3BFairSemaphoreWhiteBoxCOTest" time="0.004"/>
+  <testcase name="testAcquireWithInterrupt" classname="edu.vandy.simulator.managers.palantiri.concurrentMapFairSemaphore.assignment3BFairSemaphoreWhiteBoxCOTest" time="0.005"/>
+  <testcase name="testTryToGetPermitUnlockedFullQueueAndNoAvailablePermits" classname="edu.vandy.simulator.managers.palantiri.concurrentMapFairSemaphore.assignment3BFairSemaphoreWhiteBoxCOTest" time="0.004"/>
+  <testcase name="test constructor" classname="edu.vandy.simulator.managers.palantiri.concurrentMapFairSemaphore.assignment3BFairSemaphoreWhiteBoxCOTest" time="0.005"/>
+  <testcase name="'waitForPermit 1" classname="edu.vandy.simulator.managers.palantiri.concurrentMapFairSemaphore.assignment3BFairSemaphoreWhiteBoxCOTest" time="0.314"/>
+  <testcase name="'waitForPermit 2" classname="edu.vandy.simulator.managers.palantiri.concurrentMapFairSemaphore.assignment3BFairSemaphoreWhiteBoxCOTest" time="0.009"/>
+  <testcase name="'waitForPermit 3" classname="edu.vandy.simulator.managers.palantiri.concurrentMapFairSemaphore.assignment3BFairSemaphoreWhiteBoxCOTest" time="0.008"/>
+  <testcase name="testReleaseLockingWithNotEmptyQueue" classname="edu.vandy.simulator.managers.palantiri.concurrentMapFairSemaphore.assignment3BFairSemaphoreWhiteBoxCOTest" time="0.007"/>
+  <testcase name="testTryToGetPermitWhenUnlocked" classname="edu.vandy.simulator.managers.palantiri.concurrentMapFairSemaphore.assignment3BFairSemaphoreWhiteBoxCOTest" time="0.004"/>
+  <testcase name="testTryToGetPermitUnlockedEmptyQueueAndAvailablePermits" classname="edu.vandy.simulator.managers.palantiri.concurrentMapFairSemaphore.assignment3BFairSemaphoreWhiteBoxCOTest" time="0.002"/>
+  <testcase name="testAvailablePermits" classname="edu.vandy.simulator.managers.palantiri.concurrentMapFairSemaphore.assignment3BFairSemaphoreWhiteBoxCOTest" time="0.002"/>
+  <testcase name="testWaitForPermitWithNoBlocking" classname="edu.vandy.simulator.managers.palantiri.concurrentMapFairSemaphore.assignment3BFairSemaphoreWhiteBoxCOTest" time="0.004"/>
+  <testcase name="testReleaseFIFOWithNotEmptyQueue" classname="edu.vandy.simulator.managers.palantiri.concurrentMapFairSemaphore.assignment3BFairSemaphoreWhiteBoxCOTest" time="0.003"/>
+  <testcase name="testAcquireWithNoBlocking" classname="edu.vandy.simulator.managers.palantiri.concurrentMapFairSemaphore.assignment3BFairSemaphoreWhiteBoxCOTest" time="0.002"/>
+  <testcase name="testAcquireWithBlocking" classname="edu.vandy.simulator.managers.palantiri.concurrentMapFairSemaphore.assignment3BFairSemaphoreWhiteBoxCOTest" time="0.003"/>
+  <testcase name="testAcquireUninterruptiblyWithInterrupt" classname="edu.vandy.simulator.managers.palantiri.concurrentMapFairSemaphore.assignment3BFairSemaphoreWhiteBoxCOTest" time="0.003"/>
+  <testcase name="testWaitForPermitWithInterrupt" classname="edu.vandy.simulator.managers.palantiri.concurrentMapFairSemaphore.assignment3BFairSemaphoreWhiteBoxCOTest" time="0.006"/>
+  <testcase name="testTryToGetPermitUnlockedFullQueueAndAvailablePermits" classname="edu.vandy.simulator.managers.palantiri.concurrentMapFairSemaphore.assignment3BFairSemaphoreWhiteBoxCOTest" time="0.002"/>
+  <testcase name="testReleaseWithEmptyQueue" classname="edu.vandy.simulator.managers.palantiri.concurrentMapFairSemaphore.assignment3BFairSemaphoreWhiteBoxCOTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

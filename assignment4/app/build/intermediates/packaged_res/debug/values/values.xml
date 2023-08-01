@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="sprites">
+        <item name="Gandalf">@drawable/gandalf_sprite</item>
+        <item name="Bilbo">@drawable/hobbit_sprite</item>
+        <item name="Gollum">@drawable/gollum_sprite</item>
+        <item name="Thorin">@drawable/thorin_sprite</item>
+    </array>
+    <color name="accentColor">@color/secondaryColor</color>
+    <color name="being_gazing_color">@color/secondaryLightColor</color>
+    <color name="being_holding_color">@android:color/holo_red_dark</color>
+    <color name="being_idle_color">@color/primaryLightColor</color>
+    <color name="being_waiting_color">@color/primaryLightColor</color>
+    <color name="fabProgressColor">@color/secondaryLightColor</color>
+    <color name="grey_600">#6d6d6d</color>
+    <color name="grey_600_alpha_50">#806d6d6d</color>
+    <color name="grey_800">#424242</color>
+    <color name="grey_900">#1b1b1b</color>
+    <color name="ic_launcher_background">@color/white</color>
+    <color name="orange_200">#FFCC80</color>
+    <color name="orange_400">#FFA726</color>
+    <color name="orange_700">#F57C00</color>
+    <color name="orange_900">#E65100</color>
+    <color name="palantir_idle_color">@color/primaryColor</color>
+    <color name="palantir_in_use_color">@color/accentColor</color>
+    <color name="path_color">@color/primaryLightColor</color>
+    <color name="primaryColor">@color/grey_800</color>
+    <color name="primaryDarkColor">@color/grey_900</color>
+    <color name="primaryLightColor">@color/grey_600</color>
+    <color name="primaryTextColor">@color/white</color>
+    <color name="secondaryColor">@color/orange_700</color>
+    <color name="secondaryDarkColor">@color/orange_900</color>
+    <color name="secondaryExtraLightColor">@color/orange_200</color>
+    <color name="secondaryLightColor">@color/orange_400</color>
+    <color name="secondaryTextColor">@color/white</color>
+    <color name="speed_bottom_sheet_background_color">@color/grey_600_alpha_50</color>
+    <color name="white">#ffffff</color>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="list_item_spacing">16dp</dimen>
+    <dimen name="list_item_spacing_half">8dp</dimen>
+    <dimen name="nav_header_height">176dp</dimen>
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="progress_bar_size">16dp</dimen>
+    <dimen name="settingsSeekBarValue">30sp</dimen>
+    <dimen name="status_bar_height">24dp</dimen>
+    <dimen name="touch_raise">12dp</dimen>
+    <integer name="gollumIndex">2</integer>
+    <string name="action_settings">Settings</string>
+    <string name="app_name">Palantiri Simulation</string>
+    <string name="button_start_simulation">Start Simulation</string>
+    <string name="button_stop_simulation">Stop Simulation</string>
+    <string name="edit_text_hint_beings">1 - 10 (6 default)</string>
+    <string name="edit_text_hint_iterations">1 to 100 (5 default)</string>
+    <string name="edit_text_hint_palantiri">1 - 6 (4 default)</string>
+    <string name="hide_speed_controller">Hide speed controller</string>
+    <string name="label_gazing_iterations">Gazing Iterations</string>
+    <string name="label_number_of_beings"># of Beings</string>
+    <string name="main_activity_hint">Swipe left to open the settings panel.</string>
+    <string name="navigation_drawer_close">Close development settings drawer</string>
+    <string name="navigation_drawer_open">Open development settings drawer</string>
+    <string name="palantiri_configuration">Palantiri Configuration</string>
+    <string name="palantiri_simulation">Palantiri Simulation</string>
+    <string name="show_speed_controller">Show speed controller</string>
+    <string name="simulation_settings">Simulation Settings</string>
+    <string name="speed_label">Speed:</string>
+    <string name="toast_incorrect_arguments">Arguments were incorrect</string>
+    <string name="toast_resolve_intent_to_activity_failed">Intent did not resolve to an Activity</string>
+    <string name="toast_simulation_complete">Simulation complete</string>
+    <string name="toast_simulation_resume">Continuing simulation</string>
+    <string name="toast_simulation_stopped">Exception was thrown or stop button was pressed, so %1$d simulation threads are being halted</string>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+        <item name="colorAccent">@color/accentColor</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        
+    </style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="windowActionModeOverlay">true</item>
+    </style>
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+    <style name="None"/>
+    <style name="SettingsThemeDark" parent="Base.ThemeOverlay.AppCompat.Dark">
+    </style>
+    <style name="Widget.Settings.Header" parent="None">
+        <item name="android:paddingBottom">2dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:layout_marginTop">24dp</item>
+        <item name="android:layout_marginBottom">2dp</item>
+        <item name="android:background">@drawable/settings_header_bg</item>
+    </style>
+    <style name="Widget.Settings.RowTitle" parent="Widget.Settings.RowWidget">
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="Widget.Settings.RowValue" parent="Widget.Settings.RowWidget">
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="Widget.Settings.RowWidget" parent="None">
+        <item name="android:minHeight">26dp</item>
+        <item name="android:layout_marginTop">4dp</item>
+    </style>
+    <style name="Widget.Settings.SeekBar" parent="None">
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+    <style name="Widget.Settings.SubTitle" parent="None">
+        <item name="android:textAppearance">@android:style/TextAppearance.Holo.Widget.ActionBar.Subtitle</item>
+    </style>
+    <style name="Widget.Settings.TextStyle" parent="None">
+        
+    </style>
+    <style name="Widget.Settings.Title" parent="None">
+        <item name="android:textAppearance">@android:style/TextAppearance.Holo.Widget.ActionBar.Title</item>
+    </style>
+</resources>

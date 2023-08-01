@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="edu.vandy.simulator.managers.beings.executorService.Assignment2ABeingCallableTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-08-01T20:47:36" hostname="Douglass-MBP.attlocal.net" time="0.132">
+  <properties/>
+  <testcase name="call" classname="edu.vandy.simulator.managers.beings.executorService.Assignment2ABeingCallableTest" time="0.115"/>
+  <testcase name="testAcquirePalantirAndGazeMethod" classname="edu.vandy.simulator.managers.beings.executorService.Assignment2ABeingCallableTest" time="0.01"/>
+  <testcase name="testAcquirePalantirAndGazeMethodErrorHandling" classname="edu.vandy.simulator.managers.beings.executorService.Assignment2ABeingCallableTest" time="0.007"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

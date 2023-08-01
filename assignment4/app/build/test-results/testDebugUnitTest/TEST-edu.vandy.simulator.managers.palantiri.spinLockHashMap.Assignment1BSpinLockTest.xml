@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="edu.vandy.simulator.managers.palantiri.spinLockHashMap.Assignment1BSpinLockTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2023-08-01T20:47:35" hostname="Douglass-MBP.attlocal.net" time="0.132">
+  <properties/>
+  <testcase name="tryLock uses correct calls" classname="edu.vandy.simulator.managers.palantiri.spinLockHashMap.Assignment1BSpinLockTest" time="0.062"/>
+  <testcase name="member are properly initialized" classname="edu.vandy.simulator.managers.palantiri.spinLockHashMap.Assignment1BSpinLockTest" time="0.011"/>
+  <testcase name="lock spins until acquired" classname="edu.vandy.simulator.managers.palantiri.spinLockHashMap.Assignment1BSpinLockTest" time="0.01"/>
+  <testcase name="unlock should release a held lock" classname="edu.vandy.simulator.managers.palantiri.spinLockHashMap.Assignment1BSpinLockTest" time="0.016"/>
+  <testcase name="locks when not already locked" classname="edu.vandy.simulator.managers.palantiri.spinLockHashMap.Assignment1BSpinLockTest" time="0.01"/>
+  <testcase name="lock only calls tryLock when required" classname="edu.vandy.simulator.managers.palantiri.spinLockHashMap.Assignment1BSpinLockTest" time="0.012"/>
+  <testcase name="lock spins until cancelled" classname="edu.vandy.simulator.managers.palantiri.spinLockHashMap.Assignment1BSpinLockTest" time="0.01"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

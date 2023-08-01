@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="edu.vandy.simulator.Assignment1AIntegratedTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-08-01T20:47:23" hostname="Douglass-MBP.attlocal.net" time="1.955">
+  <properties/>
+  <testcase name="normalTest" classname="edu.vandy.simulator.Assignment1AIntegratedTest" time="1.763"/>
+  <testcase name="stressTest" classname="edu.vandy.simulator.Assignment1AIntegratedTest" time="0.192"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[SLF4J: No SLF4J providers were found.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+]]></system-err>
+</testsuite>

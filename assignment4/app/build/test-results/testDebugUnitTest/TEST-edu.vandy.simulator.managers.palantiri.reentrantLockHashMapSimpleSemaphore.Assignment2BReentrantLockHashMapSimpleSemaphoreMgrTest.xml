@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="edu.vandy.simulator.managers.palantiri.reentrantLockHashMapSimpleSemaphore.Assignment2BReentrantLockHashMapSimpleSemaphoreMgrTest" tests="16" skipped="0" failures="0" errors="0" timestamp="2023-08-01T20:47:34" hostname="Douglass-MBP.attlocal.net" time="0.99">
+  <properties/>
+  <testcase name="acquire does not call unlock if lock fails" classname="edu.vandy.simulator.managers.palantiri.reentrantLockHashMapSimpleSemaphore.Assignment2BReentrantLockHashMapSimpleSemaphoreMgrTest" time="0.648"/>
+  <testcase name="release does not unlock the lock if the lock call is interrupted" classname="edu.vandy.simulator.managers.palantiri.reentrantLockHashMapSimpleSemaphore.Assignment2BReentrantLockHashMapSimpleSemaphoreMgrTest" time="0.014"/>
+  <testcase name="acquire all available palantiri" classname="edu.vandy.simulator.managers.palantiri.reentrantLockHashMapSimpleSemaphore.Assignment2BReentrantLockHashMapSimpleSemaphoreMgrTest" time="0.02"/>
+  <testcase name="build model graduate only test" classname="edu.vandy.simulator.managers.palantiri.reentrantLockHashMapSimpleSemaphore.Assignment2BReentrantLockHashMapSimpleSemaphoreMgrTest" time="0.049"/>
+  <testcase name="acquire attempts to acquire and lock a palantir at the correct time" classname="edu.vandy.simulator.managers.palantiri.reentrantLockHashMapSimpleSemaphore.Assignment2BReentrantLockHashMapSimpleSemaphoreMgrTest" time="0.011"/>
+  <testcase name="build model undergraduate and graduate test" classname="edu.vandy.simulator.managers.palantiri.reentrantLockHashMapSimpleSemaphore.Assignment2BReentrantLockHashMapSimpleSemaphoreMgrTest" time="0.012"/>
+  <testcase name="acquire locks the only available palantir" classname="edu.vandy.simulator.managers.palantiri.reentrantLockHashMapSimpleSemaphore.Assignment2BReentrantLockHashMapSimpleSemaphoreMgrTest" time="0.012"/>
+  <testcase name="release handles a null palantir" classname="edu.vandy.simulator.managers.palantiri.reentrantLockHashMapSimpleSemaphore.Assignment2BReentrantLockHashMapSimpleSemaphoreMgrTest" time="0.01"/>
+  <testcase name="acquire should always unlock the reentrant lock" classname="edu.vandy.simulator.managers.palantiri.reentrantLockHashMapSimpleSemaphore.Assignment2BReentrantLockHashMapSimpleSemaphoreMgrTest" time="0.029"/>
+  <testcase name="acquire all available palantiri graduate version" classname="edu.vandy.simulator.managers.palantiri.reentrantLockHashMapSimpleSemaphore.Assignment2BReentrantLockHashMapSimpleSemaphoreMgrTest" time="0.064"/>
+  <testcase name="release must call cancellable lock and semaphore methods in the correct order" classname="edu.vandy.simulator.managers.palantiri.reentrantLockHashMapSimpleSemaphore.Assignment2BReentrantLockHashMapSimpleSemaphoreMgrTest" time="0.032"/>
+  <testcase name="acquire does not call unlock if semaphore acquire fails" classname="edu.vandy.simulator.managers.palantiri.reentrantLockHashMapSimpleSemaphore.Assignment2BReentrantLockHashMapSimpleSemaphoreMgrTest" time="0.012"/>
+  <testcase name="release calls unlock at the appropriate location" classname="edu.vandy.simulator.managers.palantiri.reentrantLockHashMapSimpleSemaphore.Assignment2BReentrantLockHashMapSimpleSemaphoreMgrTest" time="0.016"/>
+  <testcase name="release handles an invalid palantir" classname="edu.vandy.simulator.managers.palantiri.reentrantLockHashMapSimpleSemaphore.Assignment2BReentrantLockHashMapSimpleSemaphoreMgrTest" time="0.022"/>
+  <testcase name="acquire locks and returns the first available palantir" classname="edu.vandy.simulator.managers.palantiri.reentrantLockHashMapSimpleSemaphore.Assignment2BReentrantLockHashMapSimpleSemaphoreMgrTest" time="0.012"/>
+  <testcase name="release all acquired palantiri" classname="edu.vandy.simulator.managers.palantiri.reentrantLockHashMapSimpleSemaphore.Assignment2BReentrantLockHashMapSimpleSemaphoreMgrTest" time="0.027"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

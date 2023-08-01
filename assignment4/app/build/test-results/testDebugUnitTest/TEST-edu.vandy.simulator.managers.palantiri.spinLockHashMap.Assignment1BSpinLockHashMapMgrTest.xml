@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="edu.vandy.simulator.managers.palantiri.spinLockHashMap.Assignment1BSpinLockHashMapMgrTest" tests="17" skipped="0" failures="0" errors="0" timestamp="2023-08-01T20:47:35" hostname="Douglass-MBP.attlocal.net" time="0.343">
+  <properties/>
+  <testcase name="acquire is implemented correctly" classname="edu.vandy.simulator.managers.palantiri.spinLockHashMap.Assignment1BSpinLockHashMapMgrTest" time="0.108"/>
+  <testcase name="release never throws a NullPointerException" classname="edu.vandy.simulator.managers.palantiri.spinLockHashMap.Assignment1BSpinLockHashMapMgrTest" time="0.009"/>
+  <testcase name="acquire does not call unlock if lock fails" classname="edu.vandy.simulator.managers.palantiri.spinLockHashMap.Assignment1BSpinLockHashMapMgrTest" time="0.013"/>
+  <testcase name="release does not unlock the lock if the lock call is interrupted" classname="edu.vandy.simulator.managers.palantiri.spinLockHashMap.Assignment1BSpinLockHashMapMgrTest" time="0.011"/>
+  <testcase name="acquire all available palantiri" classname="edu.vandy.simulator.managers.palantiri.spinLockHashMap.Assignment1BSpinLockHashMapMgrTest" time="0.011"/>
+  <testcase name="acquire a palantir when all palantiri are available" classname="edu.vandy.simulator.managers.palantiri.spinLockHashMap.Assignment1BSpinLockHashMapMgrTest" time="0.01"/>
+  <testcase name="buildModelGraduate" classname="edu.vandy.simulator.managers.palantiri.spinLockHashMap.Assignment1BSpinLockHashMapMgrTest" time="0.013"/>
+  <testcase name="release an unlocked palantir" classname="edu.vandy.simulator.managers.palantiri.spinLockHashMap.Assignment1BSpinLockHashMapMgrTest" time="0.025"/>
+  <testcase name="release a null palantir" classname="edu.vandy.simulator.managers.palantiri.spinLockHashMap.Assignment1BSpinLockHashMapMgrTest" time="0.008"/>
+  <testcase name="acquire a palantir when only one palantir is available" classname="edu.vandy.simulator.managers.palantiri.spinLockHashMap.Assignment1BSpinLockHashMapMgrTest" time="0.01"/>
+  <testcase name="release must call cancellable lock and semaphore methods in the correct order" classname="edu.vandy.simulator.managers.palantiri.spinLockHashMap.Assignment1BSpinLockHashMapMgrTest" time="0.01"/>
+  <testcase name="buildModel creates proper palantiri hashmap" classname="edu.vandy.simulator.managers.palantiri.spinLockHashMap.Assignment1BSpinLockHashMapMgrTest" time="0.011"/>
+  <testcase name="acquire does not call unlock if semaphore acquire fails" classname="edu.vandy.simulator.managers.palantiri.spinLockHashMap.Assignment1BSpinLockHashMapMgrTest" time="0.009"/>
+  <testcase name="buildModelUndergraduate" classname="edu.vandy.simulator.managers.palantiri.spinLockHashMap.Assignment1BSpinLockHashMapMgrTest" time="0.041"/>
+  <testcase name="release a locked palantir" classname="edu.vandy.simulator.managers.palantiri.spinLockHashMap.Assignment1BSpinLockHashMapMgrTest" time="0.028"/>
+  <testcase name="acquire calls unlock when unexpected exception is thrown" classname="edu.vandy.simulator.managers.palantiri.spinLockHashMap.Assignment1BSpinLockHashMapMgrTest" time="0.012"/>
+  <testcase name="release all acquired palantiri" classname="edu.vandy.simulator.managers.palantiri.spinLockHashMap.Assignment1BSpinLockHashMapMgrTest" time="0.012"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

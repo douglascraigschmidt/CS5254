@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="edu.vandy.simulator.managers.palantiri.spinLockHashMap.Assignment1BReentrantSpinLockTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2023-08-01T20:47:35" hostname="Douglass-MBP.attlocal.net" time="0.207">
+  <properties/>
+  <testcase name="lock takes ownership of lock when lock is not owned" classname="edu.vandy.simulator.managers.palantiri.spinLockHashMap.Assignment1BReentrantSpinLockTest" time="0.071"/>
+  <testcase name="lock is reentrant when called multiple times by owning thread" classname="edu.vandy.simulator.managers.palantiri.spinLockHashMap.Assignment1BReentrantSpinLockTest" time="0.045"/>
+  <testcase name="lock spins when lock already held and then holds like once lock has been released" classname="edu.vandy.simulator.managers.palantiri.spinLockHashMap.Assignment1BReentrantSpinLockTest" time="0.012"/>
+  <testcase name="unlock releases a held lock" classname="edu.vandy.simulator.managers.palantiri.spinLockHashMap.Assignment1BReentrantSpinLockTest" time="0.01"/>
+  <testcase name="unlock only release lock after recursion count reaches 0" classname="edu.vandy.simulator.managers.palantiri.spinLockHashMap.Assignment1BReentrantSpinLockTest" time="0.01"/>
+  <testcase name="waiting for a held lock can be cancelled" classname="edu.vandy.simulator.managers.palantiri.spinLockHashMap.Assignment1BReentrantSpinLockTest" time="0.011"/>
+  <testcase name="tryLock locks the Atomic member" classname="edu.vandy.simulator.managers.palantiri.spinLockHashMap.Assignment1BReentrantSpinLockTest" time="0.006"/>
+  <testcase name="lock increments lock count when already held by calling thread" classname="edu.vandy.simulator.managers.palantiri.spinLockHashMap.Assignment1BReentrantSpinLockTest" time="0.012"/>
+  <testcase name="unlock should throw an exception when lock is not held" classname="edu.vandy.simulator.managers.palantiri.spinLockHashMap.Assignment1BReentrantSpinLockTest" time="0.008"/>
+  <testcase name="lock immediately takes ownership when lock not already held" classname="edu.vandy.simulator.managers.palantiri.spinLockHashMap.Assignment1BReentrantSpinLockTest" time="0.011"/>
+  <testcase name="tryLock only uses expected call" classname="edu.vandy.simulator.managers.palantiri.spinLockHashMap.Assignment1BReentrantSpinLockTest" time="0.011"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

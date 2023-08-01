@@ -1,0 +1,140 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "edu.vanderbilt.grader",
+    "module": "gradle-plugin",
+    "version": "3.0.6.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.7.1",
+      "buildId": "xgjwhyojpjb5dl56zgozwahpvu"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "gradle-plugin-3.0.6.0.jar",
+          "url": "gradle-plugin-3.0.6.0.jar",
+          "size": 6236281,
+          "sha512": "a837fa98347fce0606415ad54ffc7623fe2b6da432ce9ea79d71c822304762907cb10ae0d09e22de0dfe88d2fd42775b47cc0cd4d5c9e312ef4432919213587d",
+          "sha256": "8096e899fa008bc1a5c70b2f1d98531f91187f36eb99f97c157b77cd1c68e19f",
+          "sha1": "f3eaded2db53251466c58b47e38b53c099a4b078",
+          "md5": "da655f81b7cdf36e12b7fabd8df8cefe"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "edu.vanderbilt.grader",
+          "module": "rubric",
+          "version": {
+            "requires": "1.2"
+          }
+        },
+        {
+          "group": "edu.vanderbilt.grader",
+          "module": "device-runner",
+          "version": {
+            "requires": "3.0.6.0"
+          }
+        },
+        {
+          "group": "edu.vanderbilt.grader",
+          "module": "common",
+          "version": {
+            "requires": "3.0.6.0"
+          }
+        },
+        {
+          "group": "edu.vanderbilt.grader",
+          "module": "test-results",
+          "version": {
+            "requires": "3.0.6.0"
+          }
+        },
+        {
+          "group": "com.google.guava",
+          "module": "guava",
+          "version": {
+            "requires": "28.1-android"
+          }
+        },
+        {
+          "group": "com.google.code.gson",
+          "module": "gson",
+          "version": {
+            "requires": "2.8.1"
+          }
+        },
+        {
+          "group": "commons-io",
+          "module": "commons-io",
+          "version": {
+            "requires": "2.6"
+          }
+        },
+        {
+          "group": "com.android.tools.ddms",
+          "module": "ddmlib",
+          "version": {
+            "requires": "25.3.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "gradle-plugin-3.0.6.0.jar",
+          "url": "gradle-plugin-3.0.6.0.jar",
+          "size": 6236281,
+          "sha512": "a837fa98347fce0606415ad54ffc7623fe2b6da432ce9ea79d71c822304762907cb10ae0d09e22de0dfe88d2fd42775b47cc0cd4d5c9e312ef4432919213587d",
+          "sha256": "8096e899fa008bc1a5c70b2f1d98531f91187f36eb99f97c157b77cd1c68e19f",
+          "sha1": "f3eaded2db53251466c58b47e38b53c099a4b078",
+          "md5": "da655f81b7cdf36e12b7fabd8df8cefe"
+        }
+      ]
+    },
+    {
+      "name": "shadowRuntimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "embedded",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "gradle-plugin-3.0.6.0.jar",
+          "url": "gradle-plugin-3.0.6.0.jar",
+          "size": 6236281,
+          "sha512": "a837fa98347fce0606415ad54ffc7623fe2b6da432ce9ea79d71c822304762907cb10ae0d09e22de0dfe88d2fd42775b47cc0cd4d5c9e312ef4432919213587d",
+          "sha256": "8096e899fa008bc1a5c70b2f1d98531f91187f36eb99f97c157b77cd1c68e19f",
+          "sha1": "f3eaded2db53251466c58b47e38b53c099a4b078",
+          "md5": "da655f81b7cdf36e12b7fabd8df8cefe"
+        }
+      ]
+    }
+  ]
+}

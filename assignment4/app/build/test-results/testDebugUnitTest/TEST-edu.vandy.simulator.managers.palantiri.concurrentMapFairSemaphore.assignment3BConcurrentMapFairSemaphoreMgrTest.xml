@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="edu.vandy.simulator.managers.palantiri.concurrentMapFairSemaphore.assignment3BConcurrentMapFairSemaphoreMgrTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2023-08-01T20:47:33" hostname="Douglass-MBP.attlocal.net" time="0.235">
+  <properties/>
+  <testcase name="release a palantir that has not yet been acquired" classname="edu.vandy.simulator.managers.palantiri.concurrentMapFairSemaphore.assignment3BConcurrentMapFairSemaphoreMgrTest" time="0.199"/>
+  <testcase name="release a previously acquired palantir" classname="edu.vandy.simulator.managers.palantiri.concurrentMapFairSemaphore.assignment3BConcurrentMapFairSemaphoreMgrTest" time="0.004"/>
+  <testcase name="release a palantir that does not exist" classname="edu.vandy.simulator.managers.palantiri.concurrentMapFairSemaphore.assignment3BConcurrentMapFairSemaphoreMgrTest" time="0.004"/>
+  <testcase name="release handles a null palantir" classname="edu.vandy.simulator.managers.palantiri.concurrentMapFairSemaphore.assignment3BConcurrentMapFairSemaphoreMgrTest" time="0.004"/>
+  <testcase name="buildModel graduate test" classname="edu.vandy.simulator.managers.palantiri.concurrentMapFairSemaphore.assignment3BConcurrentMapFairSemaphoreMgrTest" time="0.013"/>
+  <testcase name="acquire throws cancellation exception" classname="edu.vandy.simulator.managers.palantiri.concurrentMapFairSemaphore.assignment3BConcurrentMapFairSemaphoreMgrTest" time="0.004"/>
+  <testcase name="buildModel undergraduate test" classname="edu.vandy.simulator.managers.palantiri.concurrentMapFairSemaphore.assignment3BConcurrentMapFairSemaphoreMgrTest" time="0.007"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

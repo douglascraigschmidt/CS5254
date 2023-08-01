@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "edu.vandy.app-mergeDebugResources-47:/layout/activity_main.xml",
+        "source": "edu.vandy.app-main-50:/screen/main/layout/activity_main.xml"
+    },
+    {
+        "merged": "edu.vandy.app-mergeDebugResources-47:/layout/toolbar.xml",
+        "source": "edu.vandy.app-main-50:/screen/main/layout/toolbar.xml"
+    },
+    {
+        "merged": "edu.vandy.app-mergeDebugResources-47:/layout/app_bar_main.xml",
+        "source": "edu.vandy.app-main-50:/screen/main/layout/app_bar_main.xml"
+    },
+    {
+        "merged": "edu.vandy.app-mergeDebugResources-47:/layout/settings_dialog_fragment.xml",
+        "source": "edu.vandy.app-main-50:/screen/settings/layout/settings_dialog_fragment.xml"
+    },
+    {
+        "merged": "edu.vandy.app-mergeDebugResources-47:/layout/settings_checked_list_item.xml",
+        "source": "edu.vandy.app-main-50:/screen/settings/layout/settings_checked_list_item.xml"
+    },
+    {
+        "merged": "edu.vandy.app-mergeDebugResources-47:/layout/sprite_spinner_item.xml",
+        "source": "edu.vandy.app-main-50:/screen/settings/layout/sprite_spinner_item.xml"
+    },
+    {
+        "merged": "edu.vandy.app-mergeDebugResources-47:/layout/settings_checked_item.xml",
+        "source": "edu.vandy.app-main-50:/screen/settings/layout/settings_checked_item.xml"
+    },
+    {
+        "merged": "edu.vandy.app-mergeDebugResources-47:/layout/sprite_item.xml",
+        "source": "edu.vandy.app-main-50:/screen/main/layout/sprite_item.xml"
+    },
+    {
+        "merged": "edu.vandy.app-mergeDebugResources-47:/layout/simulation_view.xml",
+        "source": "edu.vandy.app-main-50:/screen/main/layout/simulation_view.xml"
+    }
+]

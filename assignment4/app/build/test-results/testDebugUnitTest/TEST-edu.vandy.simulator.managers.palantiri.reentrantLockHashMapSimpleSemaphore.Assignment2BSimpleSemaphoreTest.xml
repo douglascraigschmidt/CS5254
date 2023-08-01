@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="edu.vandy.simulator.managers.palantiri.reentrantLockHashMapSimpleSemaphore.Assignment2BSimpleSemaphoreTest" tests="16" skipped="0" failures="0" errors="0" timestamp="2023-08-01T20:47:35" hostname="Douglass-MBP.attlocal.net" time="0.166">
+  <properties/>
+  <testcase name="acquire one permit when none are immediately available" classname="edu.vandy.simulator.managers.palantiri.reentrantLockHashMapSimpleSemaphore.Assignment2BSimpleSemaphoreTest" time="0.017"/>
+  <testcase name="acquire permit with await call interrupted" classname="edu.vandy.simulator.managers.palantiri.reentrantLockHashMapSimpleSemaphore.Assignment2BSimpleSemaphoreTest" time="0.013"/>
+  <testcase name="release permit with signal" classname="edu.vandy.simulator.managers.palantiri.reentrantLockHashMapSimpleSemaphore.Assignment2BSimpleSemaphoreTest" time="0.011"/>
+  <testcase name="Permits is declared correctly" classname="edu.vandy.simulator.managers.palantiri.reentrantLockHashMapSimpleSemaphore.Assignment2BSimpleSemaphoreTest" time="0.007"/>
+  <testcase name="acquire one permit" classname="edu.vandy.simulator.managers.palantiri.reentrantLockHashMapSimpleSemaphore.Assignment2BSimpleSemaphoreTest" time="0.008"/>
+  <testcase name="release permit with no signal" classname="edu.vandy.simulator.managers.palantiri.reentrantLockHashMapSimpleSemaphore.Assignment2BSimpleSemaphoreTest" time="0.008"/>
+  <testcase name="acquire one permit with an await call" classname="edu.vandy.simulator.managers.palantiri.reentrantLockHashMapSimpleSemaphore.Assignment2BSimpleSemaphoreTest" time="0.01"/>
+  <testcase name="acquire all permits" classname="edu.vandy.simulator.managers.palantiri.reentrantLockHashMapSimpleSemaphore.Assignment2BSimpleSemaphoreTest" time="0.01"/>
+  <testcase name="acquire uninterruptibly should not directly modify permits" classname="edu.vandy.simulator.managers.palantiri.reentrantLockHashMapSimpleSemaphore.Assignment2BSimpleSemaphoreTest" time="0.01"/>
+  <testcase name="acquire permit uninterruptibly should set interrupt flag if interrupted" classname="edu.vandy.simulator.managers.palantiri.reentrantLockHashMapSimpleSemaphore.Assignment2BSimpleSemaphoreTest" time="0.01"/>
+  <testcase name="acquire multiple permits with await calls" classname="edu.vandy.simulator.managers.palantiri.reentrantLockHashMapSimpleSemaphore.Assignment2BSimpleSemaphoreTest" time="0.01"/>
+  <testcase name="acquire permit uninterruptibly should set interrupt flag before returning" classname="edu.vandy.simulator.managers.palantiri.reentrantLockHashMapSimpleSemaphore.Assignment2BSimpleSemaphoreTest" time="0.01"/>
+  <testcase name="acquire permit uninterruptibly should not be interruptible" classname="edu.vandy.simulator.managers.palantiri.reentrantLockHashMapSimpleSemaphore.Assignment2BSimpleSemaphoreTest" time="0.01"/>
+  <testcase name="acquire uninterruptibly should reset interrupt flag when interrupted" classname="edu.vandy.simulator.managers.palantiri.reentrantLockHashMapSimpleSemaphore.Assignment2BSimpleSemaphoreTest" time="0.01"/>
+  <testcase name="acquire permit uninterruptibly with permits available" classname="edu.vandy.simulator.managers.palantiri.reentrantLockHashMapSimpleSemaphore.Assignment2BSimpleSemaphoreTest" time="0.009"/>
+  <testcase name="release permit with only when positive" classname="edu.vandy.simulator.managers.palantiri.reentrantLockHashMapSimpleSemaphore.Assignment2BSimpleSemaphoreTest" time="0.011"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

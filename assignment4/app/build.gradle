@@ -1,7 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'kotlin-kapt'
+    id 'com.google.devtools.ksp'
 }
 
 // For mockk with Java 16+
@@ -97,7 +97,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-common:2.6.1"
     implementation "androidx.preference:preference-ktx:1.2.0"
     implementation "androidx.core:core-ktx:1.10.1"
-    implementation 'androidx.fragment:fragment-ktx:1.6.0'
+    implementation 'androidx.fragment:fragment-ktx:1.6.1'
 
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.2'
 
@@ -114,7 +114,8 @@ dependencies {
     implementation "com.squareup.picasso:picasso:2.71828"
 
     implementation 'com.github.bumptech.glide:glide:4.15.1'
-    kapt 'com.github.bumptech.glide:compiler:4.15.1'
+
+    ksp 'com.github.bumptech.glide:ksp:4.15.1'
 
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.12'
 

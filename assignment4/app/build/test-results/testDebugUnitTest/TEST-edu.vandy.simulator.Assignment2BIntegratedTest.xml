@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="edu.vandy.simulator.Assignment2BIntegratedTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-08-01T20:47:27" hostname="Douglass-MBP.attlocal.net" time="1.036">
-  <properties/>
-  <testcase name="normalTest" classname="edu.vandy.simulator.Assignment2BIntegratedTest" time="0.967"/>
-  <testcase name="stressTest" classname="edu.vandy.simulator.Assignment2BIntegratedTest" time="0.069"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

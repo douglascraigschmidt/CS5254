@@ -9,10 +9,12 @@ import org.junit.After
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
+import org.mockito.ArgumentMatchers.anyLong
 import org.mockito.InOrder
 import org.mockito.Mock
 import org.mockito.quality.Strictness
 import java.util.*
+import java.util.concurrent.TimeUnit
 import java.util.concurrent.locks.Condition
 import java.util.concurrent.locks.Lock
 import java.util.concurrent.locks.ReentrantLock
@@ -135,7 +137,8 @@ class assignment3BFairSemaphoreWhiteBoxCOTest : AssignmentTests(0) {
             fail("Thread should not throw any exceptions.")
         }
 
-        verify(fairSemaphoreMock).acquire()
+        verify(fairSemaphoreMock, times(1)).acquire()
+        verify(fairSemaphoreMock, times(1)).acquireUninterruptibly()
     }
 
     @Test
@@ -161,6 +164,7 @@ class assignment3BFairSemaphoreWhiteBoxCOTest : AssignmentTests(0) {
         }
 
         verify(fairSemaphoreMock, times(interrupts + 1)).acquire()
+        verify(fairSemaphoreMock, times(1)).acquireUninterruptibly()
         val wasInterrupted = Thread.interrupted()
         assertTrue(wasInterrupted, "Thread should have reset the Thread interrupted flag.")
     }
@@ -200,6 +204,8 @@ class assignment3BFairSemaphoreWhiteBoxCOTest : AssignmentTests(0) {
         assertTrue(result, "Method should have returned true.")
         verify(lockMock).lock()
         verify(lockMock).unlock()
+        verify(lockMock, never()).tryLock()
+        verify(lockMock, never()).tryLock(anyLong(), any())
     }
 
     @Test

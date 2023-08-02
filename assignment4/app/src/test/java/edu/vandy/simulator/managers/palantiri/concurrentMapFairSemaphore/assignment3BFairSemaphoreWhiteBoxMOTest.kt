@@ -90,6 +90,7 @@ class assignment3BFairSemaphoreWhiteBoxMOTest : AssignmentTests() {
             fail("Thread should not throw any exceptions.")
         }
         verify(fairSemaphoreMock, times(1)).acquire()
+        verify(fairSemaphoreMock, times(1)).acquireUninterruptibly()
     }
 
     @Test
@@ -115,6 +116,7 @@ class assignment3BFairSemaphoreWhiteBoxMOTest : AssignmentTests() {
         }
 
         verify(fairSemaphoreMock, times(interrupts + 1)).acquire()
+        verify(fairSemaphoreMock, times(1)).acquireUninterruptibly()
         val wasInterrupted = Thread.interrupted()
         assertTrue(wasInterrupted, "Thread should have reset the Thread interrupted flag.")
     }

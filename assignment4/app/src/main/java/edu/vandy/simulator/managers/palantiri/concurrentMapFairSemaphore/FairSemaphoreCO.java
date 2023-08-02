@@ -120,8 +120,9 @@ public class FairSemaphoreCO
      * @return Returns true if the permit was obtained, else false.
      */
     protected boolean tryToGetPermitUnlocked() {
-        // We must wait if there are already conditions in the queue
-        // or if there are no permits available.
+        // Return 'false' if there are already conditions in the queue
+        // or if there are no permits available, otherwise return
+        // 'true'.
         //
         // TODO -- you fill in here replacing this statement with your
         // solution, which should not be synchronized, but which

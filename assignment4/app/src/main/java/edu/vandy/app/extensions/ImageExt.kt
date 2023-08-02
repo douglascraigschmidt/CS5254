@@ -2,27 +2,16 @@ package edu.vandy.app.extensions
 
 import android.content.Context
 import android.graphics.Bitmap
-import android.graphics.drawable.Drawable
 import android.widget.ImageView
-import com.bumptech.glide.load.DataSource
-import com.bumptech.glide.load.engine.GlideException
-import com.bumptech.glide.load.resource.bitmap.DownsampleStrategy
-import com.bumptech.glide.load.resource.gif.GifDrawable
-import com.bumptech.glide.request.RequestListener
-import com.bumptech.glide.request.target.CustomTarget
-import com.bumptech.glide.request.target.Target
-import com.bumptech.glide.request.transition.Transition
 import com.squareup.picasso.Callback
 import com.squareup.picasso.MemoryPolicy
 import edu.vandy.app.App
-import edu.vandy.app.modules.GlideApp
 import edu.vandy.app.preferences.EnumAdapter
 import edu.vandy.app.preferences.ObservablePreference
 import edu.vandy.app.preferences.Subscriber
 import edu.vandy.app.ui.screens.settings.Settings
 import java.io.ByteArrayOutputStream
 import java.io.File
-import java.lang.Exception
 
 /**
  * Custom Picasso singleton so that the rest of the app
@@ -65,29 +54,29 @@ object ImageDownloader {
      */
     enum class Type {
         PICASSO,
-        GLIDE
+//        GLIDE
     }
 
     /**
      * Current strategy used for downloading images.
      */
     var type: Type by ObservablePreference(
-            default = Settings.DEFAULT_IMAGE_DOWNLOADER,
-            name = Settings.IMAGE_DOWNLOADER_PREF,
-            adapter = EnumAdapter(Type::class.java),
-            subscriber = object : Subscriber<Type> {
-                override val subscriber: (Type) -> Unit
-                    get() = {
-                        println("DOWNLOADER changed to $it")
-                        if (it == Type.PICASSO) {
-                            installPicasso()
-                        }
+        default = Settings.DEFAULT_IMAGE_DOWNLOADER,
+        name = Settings.IMAGE_DOWNLOADER_PREF,
+        adapter = EnumAdapter(Type::class.java),
+        subscriber = object : Subscriber<Type> {
+            override val subscriber: (Type) -> Unit
+                get() = {
+                    println("DOWNLOADER changed to $it")
+                    if (it == Type.PICASSO) {
+                        installPicasso()
                     }
-
-                override fun unsubscribe(callback: () -> Unit) {
-                    App.instance.compositeUnsubscriber.add(callback)
                 }
-            })
+
+            override fun unsubscribe(callback: () -> Unit) {
+                App.instance.compositeUnsubscriber.add(callback)
+            }
+        })
 
     init {
         println("ImageDownloader: Init called, type = $type")
@@ -98,11 +87,11 @@ object ImageDownloader {
      */
     fun clearCache() {
         when (type) {
-            Type.GLIDE -> {
-                GlideApp.getPhotoCacheDir(App.instance)?.let {
-                    deleteContents(it)
-                }
-            }
+//            Type.GLIDE -> {
+//                Glide.getPhotoCacheDir(App.instance)?.let {
+//                    deleteContents(it)
+//                }
+//            }
             Type.PICASSO -> {
                 Picasso.clearCache()
             }
@@ -161,9 +150,11 @@ fun hasImageExtension(url: String): Boolean {
  * A gif placeholder [placeholder] can be specified. The download
  * requires the imageDownloader to be set to ImageDownloader.GLIDE.
  */
-fun ImageView.asyncLoadGif(imageId: Int,
-                           placeholder: Int = IMAGE_VIEW_PLACEHOLDER,
-                           block: (status: Boolean) -> Unit = {}) {
+fun ImageView.asyncLoadGif(
+    imageId: Int,
+    placeholder: Int = IMAGE_VIEW_PLACEHOLDER,
+    block: (status: Boolean) -> Unit = {}
+) {
     checkPlacholder(placeholder)
     asyncLoadGif(context.getResourceUri(imageId).toString(), placeholder, block)
 }
@@ -173,37 +164,39 @@ fun ImageView.asyncLoadGif(imageId: Int,
  * A gif placeholder [placeholder] can be specified. The download
  * requires the imageDownloader to be set to ImageDownloader.GLIDE.
  */
-fun ImageView.asyncLoadGif(url: String,
-                           placeholder: Int = IMAGE_VIEW_PLACEHOLDER,
-                           block: (status: Boolean) -> Unit = {}) {
+fun ImageView.asyncLoadGif(
+    url: String,
+    placeholder: Int = IMAGE_VIEW_PLACEHOLDER,
+    block: (status: Boolean) -> Unit = {}
+) {
     checkPlacholder(placeholder)
     (!url.isBlank()).let {
         when (ImageDownloader.type) {
-            ImageDownloader.Type.GLIDE -> {
-                clear()
-                val builder = GlideApp.with(this).asGif().load(url)
-                if (placeholder > 0) {
-                    builder.placeholder(placeholder)
-                }
-                builder.listener(object : RequestListener<GifDrawable> {
-                    override fun onResourceReady(resource: GifDrawable?,
-                                                 model: Any?,
-                                                 target: Target<GifDrawable>?,
-                                                 dataSource: DataSource?,
-                                                 isFirstResource: Boolean): Boolean {
-                        block(true)
-                        return false // Let Glide update the target.
-                    }
-
-                    override fun onLoadFailed(e: GlideException?,
-                                              model: Any?,
-                                              target: Target<GifDrawable>?,
-                                              isFirstResource: Boolean): Boolean {
-                        block(false)
-                        return false // Let Glide update the target.
-                    }
-                }).into(this)
-            }
+//            ImageDownloader.Type.GLIDE -> {
+//                clear()
+//                val builder = GlideApp.with(this).asGif().load(url)
+//                if (placeholder > 0) {
+//                    builder.placeholder(placeholder)
+//                }
+//                builder.listener(object : RequestListener<GifDrawable> {
+//                    override fun onResourceReady(resource: GifDrawable?,
+//                                                 model: Any?,
+//                                                 target: Target<GifDrawable>?,
+//                                                 dataSource: DataSource?,
+//                                                 isFirstResource: Boolean): Boolean {
+//                        block(true)
+//                        return false // Let Glide update the target.
+//                    }
+//
+//                    override fun onLoadFailed(e: GlideException?,
+//                                              model: Any?,
+//                                              target: Target<GifDrawable>?,
+//                                              isFirstResource: Boolean): Boolean {
+//                        block(false)
+//                        return false // Let Glide update the target.
+//                    }
+//                }).into(this)
+//            }
             ImageDownloader.Type.PICASSO -> {
                 clear()
                 asyncLoad(url, placeholder, block)
@@ -225,13 +218,17 @@ fun checkPlacholder(@Suppress("UNUSED_PARAMETER") placeholder: Int) {
  * is used unless a custom [placeholder] value is specified. The download
  * is performed by the currently selected imageDownloader strategy.
  */
-fun ImageView.asyncLoad(imageId: Int,
-                        placeholder: Int = IMAGE_VIEW_PLACEHOLDER,
-                        block: (status: Boolean) -> Unit = {}) {
+fun ImageView.asyncLoad(
+    imageId: Int,
+    placeholder: Int = IMAGE_VIEW_PLACEHOLDER,
+    block: (status: Boolean) -> Unit = {}
+) {
     checkPlacholder(placeholder)
-    asyncLoad(url = context.getResourceUri(imageId).toString(),
-            placeholder = placeholder,
-            block = block)
+    asyncLoad(
+        url = context.getResourceUri(imageId).toString(),
+        placeholder = placeholder,
+        block = block
+    )
 }
 
 /**
@@ -240,37 +237,39 @@ fun ImageView.asyncLoad(imageId: Int,
  * [placeholder] value is specified. The download is performed by the
  * currently selected imageDownloader strategy.
  */
-fun ImageView.asyncLoad(url: String,
-                        placeholder: Int = IMAGE_VIEW_PLACEHOLDER,
-                        block: (status: Boolean) -> Unit = {}) {
+fun ImageView.asyncLoad(
+    url: String,
+    placeholder: Int = IMAGE_VIEW_PLACEHOLDER,
+    block: (status: Boolean) -> Unit = {}
+) {
     checkPlacholder(placeholder)
     (!url.isBlank()).let {
         when (ImageDownloader.type) {
-            ImageDownloader.Type.GLIDE -> {
-                clear()
-                val builder = GlideApp.with(this).load(url).centerInside()
-                if (placeholder > 0) {
-                    builder.placeholder(placeholder)
-                }
-                builder.listener(object : RequestListener<Drawable> {
-                    override fun onResourceReady(resource: Drawable,
-                                                 model: Any,
-                                                 target: Target<Drawable>,
-                                                 dataSource: DataSource,
-                                                 isFirstResource: Boolean): Boolean {
-                        block(true)
-                        return false // Let Glide update the target.
-                    }
-
-                    override fun onLoadFailed(e: GlideException?,
-                                              model: Any,
-                                              target: Target<Drawable>,
-                                              isFirstResource: Boolean): Boolean {
-                        block(false)
-                        return false // Let Glide update the target.
-                    }
-                }).into(this)
-            }
+//            ImageDownloader.Type.GLIDE -> {
+//                clear()
+//                val builder = GlideApp.with(this).load(url).centerInside()
+//                if (placeholder > 0) {
+//                    builder.placeholder(placeholder)
+//                }
+//                builder.listener(object : RequestListener<Drawable> {
+//                    override fun onResourceReady(resource: Drawable,
+//                                                 model: Any,
+//                                                 target: Target<Drawable>,
+//                                                 dataSource: DataSource,
+//                                                 isFirstResource: Boolean): Boolean {
+//                        block(true)
+//                        return false // Let Glide update the target.
+//                    }
+//
+//                    override fun onLoadFailed(e: GlideException?,
+//                                              model: Any,
+//                                              target: Target<Drawable>,
+//                                              isFirstResource: Boolean): Boolean {
+//                        block(false)
+//                        return false // Let Glide update the target.
+//                    }
+//                }).into(this)
+//            }
 
             ImageDownloader.Type.PICASSO -> {
                 clear()
@@ -279,10 +278,10 @@ fun ImageView.asyncLoad(url: String,
                     builder.placeholder(placeholder)
                 }
                 builder.into(this,
-                        object : Callback {
-                            override fun onSuccess() = block(true)
-                            override fun onError(e: Exception?) = block(false)
-                        })
+                    object : Callback {
+                        override fun onSuccess() = block(true)
+                        override fun onError(e: Exception?) = block(false)
+                    })
             }
         }
     }
@@ -294,7 +293,7 @@ fun ImageView.asyncLoad(url: String,
 
 fun ImageView.clear() {
     when (ImageDownloader.type) {
-        ImageDownloader.Type.GLIDE -> GlideApp.with(this).clear(this)
+//        ImageDownloader.Type.GLIDE -> GlideApp.with(this).clear(this)
         ImageDownloader.Type.PICASSO -> Picasso.with(this.context).cancelRequest(this)
     }
 }
@@ -303,37 +302,37 @@ fun ImageView.clear() {
  * Asynchronously attempts to fetch an image and then calls [block]
  * in the the calling thread passing in the state of the fetch operation.
  */
-fun Context.asyncFetchImage(url: String,
-                            width: Int = Target.SIZE_ORIGINAL,
-                            height: Int = Target.SIZE_ORIGINAL,
-                            block: (isImage: Boolean) -> Unit) {
-    when (ImageDownloader.type) {
-        ImageDownloader.Type.GLIDE -> {
-            GlideApp.with(applicationContext)
-                    .asBitmap()
-                    .load(url)
-                    .downsample(DownsampleStrategy.AT_MOST)
-                    .into(object : CustomTarget<Bitmap>(width, height) {
-                        override fun onResourceReady(
-                                resource: Bitmap,
-                                transition: Transition<in Bitmap>?) = block(true)
-                        override fun onLoadFailed(errorDrawable: Drawable?) = block(false)
-                        override fun onLoadCleared(placeholder: Drawable?) {
-                            block(false)
-                        }
-                    })
-        }
-
-        ImageDownloader.Type.PICASSO -> {
-            Picasso.with(this)
-                    .load(url)
-                    .fetch(object : Callback {
-                        override fun onSuccess() = block(true)
-                        override fun onError(e: Exception?) = block(false)
-                    })
-        }
-    }
-}
+//fun Context.asyncFetchImage(url: String,
+//                            width: Int = Target.SIZE_ORIGINAL,
+//                            height: Int = Target.SIZE_ORIGINAL,
+//                            block: (isImage: Boolean) -> Unit) {
+//    when (ImageDownloader.type) {
+//        ImageDownloader.Type.GLIDE -> {
+//            GlideApp.with(applicationContext)
+//                    .asBitmap()
+//                    .load(url)
+//                    .downsample(DownsampleStrategy.AT_MOST)
+//                    .into(object : CustomTarget<Bitmap>(width, height) {
+//                        override fun onResourceReady(
+//                                resource: Bitmap,
+//                                transition: Transition<in Bitmap>?) = block(true)
+//                        override fun onLoadFailed(errorDrawable: Drawable?) = block(false)
+//                        override fun onLoadCleared(placeholder: Drawable?) {
+//                            block(false)
+//                        }
+//                    })
+//        }
+//
+//        ImageDownloader.Type.PICASSO -> {
+//            Picasso.with(this)
+//                    .load(url)
+//                    .fetch(object : Callback {
+//                        override fun onSuccess() = block(true)
+//                        override fun onError(e: Exception?) = block(false)
+//                    })
+//        }
+//    }
+//}
 
 
 fun getImageBytes(caching: Boolean = true): ByteArray {

@@ -9,7 +9,7 @@ object Assignment {
         Assignment3a,
         Assignment3b,
         Assignment4,
-        Assignment4a,
+        Assignment5,
         all
     }
 

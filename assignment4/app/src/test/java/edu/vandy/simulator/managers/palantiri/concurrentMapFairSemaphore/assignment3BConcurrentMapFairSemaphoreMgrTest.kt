@@ -8,6 +8,12 @@ import edu.vandy.simulator.managers.palantiri.PalantiriManager
 import edu.vandy.simulator.utils.Student
 import edu.vandy.simulator.utils.Student.Type.Graduate
 import edu.vandy.simulator.utils.Student.Type.Undergraduate
+import io.mockk.Runs
+import io.mockk.confirmVerified
+import io.mockk.every
+import io.mockk.just
+import io.mockk.mockk
+import io.mockk.spyk
 import junit.framework.TestCase
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Assert.*
@@ -72,8 +78,8 @@ class assignment3BConcurrentMapFairSemaphoreMgrTest : AssignmentTests(10) {
     }
 
     //TODO: Does not work on CI/CD using Java 17 (timeout).
-//    @Test(timeout = 50000)
-    fun `acquire multiple palantiri`() {
+    @Test(timeout = 50000)
+    fun `acquire multiple palantiri produces the expected result`() {
         val random = Random()
         repeat(REPEAT_COUNT) {
             mockManager.mPalantiri = buildPalantirList(mockManager)
@@ -100,6 +106,29 @@ class assignment3BConcurrentMapFairSemaphoreMgrTest : AssignmentTests(10) {
 
             reset(mockManager)
         }
+    }
+
+    @Test(timeout = 5000)
+    fun `acquire multiple palantiri implemented correctly`() {
+        val mgr: ConcurrentMapFairSemaphoreMgr = spyk(ConcurrentMapFairSemaphoreMgr())
+        val fs = mockk<FairSemaphore>()
+        val p = mockk<Palantir>()
+        val map = mutableMapOf(p to true)
+        val smap = spyk(map)
+        smap.injectInto(mgr)
+        fs.injectInto(mgr)
+
+        every { fs.acquire() } just Runs
+        every { smap.replace(any(), any(), any()) } returns true
+        assertThat(mgr.acquire()).isSameAs(p)
+        io.mockk.verify(exactly = 1) {
+            fs.acquire()
+            smap.replace(any(), true, false)
+            mgr.acquire()
+            smap.keys
+            p.hashCode()
+        }
+        confirmVerified(mgr, fs, smap, p)
     }
 
     @Test(timeout = 5000)

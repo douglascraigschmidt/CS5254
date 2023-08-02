@@ -3,7 +3,15 @@ package edu.vandy.app.ui.screens.main
 import android.animation.ValueAnimator
 import android.content.Context
 import android.content.SharedPreferences
-import android.graphics.*
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.ColorFilter
+import android.graphics.DashPathEffect
+import android.graphics.Matrix
+import android.graphics.Paint
+import android.graphics.Path
+import android.graphics.PixelFormat
+import android.graphics.Rect
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
@@ -15,7 +23,31 @@ import androidx.annotation.MainThread
 import androidx.core.content.ContextCompat
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator
 import edu.vandy.R
-import edu.vandy.app.extensions.*
+import edu.vandy.app.extensions.centerHorizontally
+import edu.vandy.app.extensions.centerInside
+import edu.vandy.app.extensions.drawRulers
+import edu.vandy.app.extensions.drawWireFrame
+import edu.vandy.app.extensions.findAncestor
+import edu.vandy.app.extensions.fit
+import edu.vandy.app.extensions.landscape
+import edu.vandy.app.extensions.longToast
+import edu.vandy.app.extensions.max
+import edu.vandy.app.extensions.min
+import edu.vandy.app.extensions.oBottom
+import edu.vandy.app.extensions.oHeight
+import edu.vandy.app.extensions.oOffset
+import edu.vandy.app.extensions.oPaddingBottom
+import edu.vandy.app.extensions.oRealized
+import edu.vandy.app.extensions.oRight
+import edu.vandy.app.extensions.oTop
+import edu.vandy.app.extensions.oWidth
+import edu.vandy.app.extensions.portrait
+import edu.vandy.app.extensions.realized
+import edu.vandy.app.extensions.scale
+import edu.vandy.app.extensions.set
+import edu.vandy.app.extensions.shift
+import edu.vandy.app.extensions.toSize
+import edu.vandy.app.extensions.toast
 import edu.vandy.app.preferences.PreferenceProvider
 import edu.vandy.app.ui.adapters.dpToPx
 import edu.vandy.app.ui.adapters.getDisplaySize
@@ -25,7 +57,6 @@ import edu.vandy.app.ui.screens.settings.Settings
 import edu.vandy.app.ui.screens.settings.adapters.SpriteAdapter
 import edu.vandy.app.utils.KtLogger
 import edu.vandy.app.utils.Range
-import edu.vandy.simulator.model.implementation.components.BeingComponent
 import edu.vandy.simulator.model.implementation.components.BeingComponent.State
 import edu.vandy.simulator.model.implementation.components.PalantirComponent
 import edu.vandy.simulator.model.implementation.components.SimulatorComponent
@@ -583,6 +614,7 @@ class SimulationView @JvmOverloads constructor(
                         }
                     }
                 }
+
                 else -> {
                 }
             }
@@ -623,6 +655,7 @@ class SimulationView @JvmOverloads constructor(
                     s1 == State.WAITING ||
                     s1 == State.GAZING ||
                     s1 == State.DONE
+
             State.WAITING -> s1 == State.IDLE || s1 == State.RELEASING
             State.ACQUIRING -> s1 == State.IDLE || s1 == State.WAITING
             State.GAZING -> s1 == State.ACQUIRING
@@ -632,10 +665,12 @@ class SimulationView @JvmOverloads constructor(
             State.ERROR -> {
                 true
             }
+
             null -> {
                 // Framework error.
                 error("State should never be null")
             }
+
             else -> {
                 // Framework error.
                 error("State $s2 is not supported by simulatorView.")
@@ -701,6 +736,7 @@ class SimulationView @JvmOverloads constructor(
                                 s1 == State.GAZING ||
                                 s1 == State.DONE
                     )
+
                     State.WAITING -> requires(s1 == State.IDLE || s1 == State.RELEASING)
                     State.ACQUIRING -> requires(s1 == State.IDLE || s1 == State.WAITING)
                     State.GAZING -> requires(s1 == State.ACQUIRING)
@@ -710,9 +746,11 @@ class SimulationView @JvmOverloads constructor(
                     State.REMOVED,
                     State.ERROR -> {
                     }
+
                     null -> {
                         error("State should never be null")
                     }
+
                     else -> {
                         error("State $s2 is not supported by simulatorView.")
                     }
@@ -730,6 +768,7 @@ class SimulationView @JvmOverloads constructor(
             State.RELEASING -> {
                 being.palantirId != -1L
             }
+
             else -> being.palantirId == -1L
         }
     }
@@ -1716,10 +1755,12 @@ class SimulationView @JvmOverloads constructor(
                         setSizesAndRanges()
                         post { requestLayout() }
                     }
+
                     SIMULATION_SHOW_SPRITES_PREF,
                     SIMULATION_SHOW_WIRE_FRAMES_PREF,
                     SIMULATION_SHOW_PROGRESS_PREF,
                     SIMULATION_SHOW_PATHS_PREF -> post { invalidate() }
+
                     else -> {
                     }
                 }
@@ -2421,6 +2462,7 @@ class SimulationView @JvmOverloads constructor(
                     State.GAZING -> {
                         it.calcGazeOffset(bounds, offset).scale(animatedValue)
                     }
+
                     else -> {
                         offset.empty
                         offset
@@ -2453,6 +2495,7 @@ class SimulationView @JvmOverloads constructor(
                             stopAnimator()
                         }
                     }
+
                     else -> {
                         stopAnimator()
                         //TODOx (fails sometimes): require(palantirId == -1L)
@@ -2484,6 +2527,7 @@ class SimulationView @JvmOverloads constructor(
                         setFloatValues(1f, 0f)
                         start()
                     }
+
                     State.ACQUIRING -> {
                         require(palantirId != -1L)
                         // To match the state duration accurately, the animation
@@ -2496,6 +2540,7 @@ class SimulationView @JvmOverloads constructor(
                         setFloatValues(0f, 1f)
                         start()
                     }
+
                     State.GAZING -> {
                         require(palantirId != -1L)
                         // Stop any animation and fix the sprite translation
@@ -2508,6 +2553,7 @@ class SimulationView @JvmOverloads constructor(
                         translationY = offset.y
                         startPalantirAnimator()
                     }
+
                     else -> {
                         error("startAnimator for invalid state $this")
                     }
@@ -2625,6 +2671,7 @@ class SimulationView @JvmOverloads constructor(
                         //println("ANIMATOR: ${animator.animatedFraction}")
                         animator.animatedFraction
                     }
+
                     else -> 0f
                 }
             }
@@ -2658,6 +2705,7 @@ class SimulationView @JvmOverloads constructor(
             get() = when (state) {
                 State.ACQUIRING,
                 State.GAZING -> snapshot.count - 1
+
                 else -> snapshot.count
             }
 
@@ -2677,6 +2725,7 @@ class SimulationView @JvmOverloads constructor(
                     State.ACQUIRING,
                     State.GAZING,
                     State.RELEASING -> being.state
+
                     else -> PalantirComponent.State.AVAILABLE
                 }
             } else {

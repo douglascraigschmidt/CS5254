@@ -20,19 +20,6 @@ class Assignment1ABeingRunnableTest : AssignmentTests(timeoutSeconds = 10) {
     var being = SimpleBeingRunnable(beingManager)
 
     @Test
-    fun `run test`() {
-        every { being.gazingIterations } returns 7
-        every { being.runGazingSimulation(7) } returns Unit
-
-        being.run()
-
-        verify {
-            being.gazingIterations
-            being.runGazingSimulation(7)
-        }
-    }
-
-    @Test
     fun `acquirePalantirAndGaze test`() {
         every { being.acquirePalantir() } returns palantir
         every { palantir.gaze(any()) } returns Unit
